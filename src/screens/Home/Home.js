@@ -1,13 +1,8 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Text, View } from "react-native";
+import React from "react";
 
 const Home = () => {
-  return (
-    <View>
-      <Text>Home</Text>
-    </View>
-  )
-}
+  <Text>Home</Text>;
+};
 
-export default Home
-
+export default Home;

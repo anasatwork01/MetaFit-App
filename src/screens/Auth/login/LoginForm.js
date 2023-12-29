@@ -4,10 +4,13 @@ import AppButton from "../../../components/UI/AppButton";
 import { AppInput } from "../../../components/UI/AppInput";
 import styles from "./styles";
 import { useNavigation } from "@react-navigation/native";
+import { useDispatch } from "react-redux";
+import { login } from "../../../Store/auth-slice";
 
 const LoginForm = () => {
   //Hooks
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
   //States
   const [email, setEmail] = useState();
@@ -19,6 +22,15 @@ const LoginForm = () => {
       email,
       password,
     };
+    dispatch(
+      login({
+        token: "Bearer " + "res.data.access_token",
+        refreshToken: "Bearer " + "res.data.refresh_token",
+        // user,
+        // verified: true,
+        // roles: user.roles,
+      })
+    );
 
     console.log(data);
   };

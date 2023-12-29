@@ -21,9 +21,9 @@ const RegisterForm = () => {
     const data = {
       name,
       email,
+      age,
       password,
       confirmPass,
-      age,
     };
 
     console.log(data);
@@ -32,6 +32,14 @@ const RegisterForm = () => {
     <View style={styles.formContainer}>
       <View style={styles.inputContainer}>
         <AppInput placeholder="Full Name" value={name} onChangeText={setName} />
+      </View>
+      <View style={styles.inputContainer}>
+        <AppInput
+          placeholder="Age"
+          value={age}
+          onChangeText={setAge}
+          keyboardType="numeric"
+        />
       </View>
       <View style={styles.inputContainer}>
         <AppInput placeholder="Email" value={email} onChangeText={setEmail} />
@@ -52,14 +60,6 @@ const RegisterForm = () => {
           onChangeText={setConfirmPass}
           secureTextEntry
           iconLeft={true}
-        />
-      </View>
-      <View style={styles.inputContainer}>
-        <AppInput
-          placeholder="Age"
-          value={age}
-          onChangeText={setAge}
-          keyboardType="numeric"
         />
       </View>
       <View style={styles.buttonContainer}>

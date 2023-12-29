@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MetaFit-App",
-    "slug": "MetaFit-App",
+    "name": "metafit",
+    "slug": "metafit",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
