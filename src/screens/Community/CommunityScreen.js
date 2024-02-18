@@ -1,8 +1,7 @@
-import { RefreshControl, Text, View } from "react-native";
+import { FlatList, RefreshControl, Text, View } from "react-native";
 import React, { useCallback, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import styles from "./styles";
-import { FlatList } from "react-native-gesture-handler";
 import Theme from "../../res/Theme";
 import Post from "../../components/Post/Post";
 import { AppText } from "../../components/UI/AppText";

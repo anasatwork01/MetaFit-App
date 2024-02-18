@@ -1,10 +1,9 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TextInput, View } from "react-native";
 import { Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AppImg from "../../../components/UI/AppImg";
 import Images from "../../../res/Images";
-import { TextInput } from "react-native-gesture-handler";
 import { ms } from "react-native-size-matters";
 import { TouchableOpacity } from "react-native";
 import { Camera } from "../../../res/Icons";

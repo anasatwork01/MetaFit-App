@@ -1,6 +1,5 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "../screens/Home/Home";
 import CommunityScreen from "../screens/Community/CommunityScreen";
 import CommentsScreen from "../screens/Community/Comments/CommentsScreen";
 import NewPost from "../screens/Community/NewPost/NewPost";

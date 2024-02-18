@@ -1,7 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "../screens/Home/Home";
 import CommentsScreen from "../screens/Community/Comments/CommentsScreen";
+import Dashboard from "../screens/Home/Dashboard";
 
 const Stack = createNativeStackNavigator();
 
@@ -12,7 +12,7 @@ const navOptionHandler = () => ({
 function HomeStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Dashboard" component={Dashboard} />
       {/* <Stack.Screen name="Comments" component={CommentsScreen} /> */}
       {/* <Stack.Screen
         name="Playback"

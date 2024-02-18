@@ -12,7 +12,7 @@ const Theme = {
     yellow: "#E49B0F",
     toast_success: "#4CAF50",
     toast_error: "#F44336",
-    light200: "#F6F6F6",
+    light200: "#f9f9f9",
     dark: "#252427",
     dark100: "#0E0E0E",
   },
