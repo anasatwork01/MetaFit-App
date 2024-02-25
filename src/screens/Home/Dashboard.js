@@ -1,10 +1,12 @@
-import { Image, ScrollView, Text, View } from "react-native";
-import React, { useLayoutEffect } from "react";
+import { Button, Image, Pressable, ScrollView, Text, View } from "react-native";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import userImage from "../../../assets/images/userdp.jpg";
 import styles from "./styles";
 import Theme from "../../res/Theme";
 import { ms } from "react-native-size-matters";
 import DonutChart from "../../components/Charts/DonutChart";
+import AppButton from "../../components/UI/AppButton";
+import BarChart from "../../components/Charts/BarChart";
 
 const WelcomeCard = () => {
   return (
@@ -34,7 +36,7 @@ const InfoCard = ({ info, value }) => {
         borderRadius: ms(10),
         backgroundColor: Theme.light.disabled,
         width: "30%",
-        height: ms(80),
+        padding: ms(15),
         justifyContent: "center",
         alignItems: "center",
         shadowColor: "#252427",
@@ -61,7 +63,120 @@ const InfoCard = ({ info, value }) => {
   );
 };
 
+const CalorieCard = ({ type, percentage }) => {
+  var colorBg;
+  var color;
+  if (type === "Burnt") {
+    colorBg = "rgba(255, 99, 71,0.2)";
+    color = "#ff6347";
+  } else {
+    colorBg = "rgba(90, 184, 90,0.2)";
+    color = "#5ab85a";
+  }
+  return (
+    <View
+      style={{
+        borderRadius: ms(10),
+        backgroundColor: colorBg,
+        width: "45%",
+        padding: ms(10),
+        justifyContent: "center",
+        alignItems: "center",
+        shadowColor: "#252427",
+        shadowOffset: { width: 0, height: 0 },
+        shadowOpacity: 0.1,
+        shadowRadius: 10,
+        elevation: 5,
+      }}
+    >
+      <View style={{ marginVertical: ms(5) }}>
+        <Text style={{ color, fontWeight: "bold" }}>{`Calorie ${type}`}</Text>
+      </View>
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          marginBottom: ms(5),
+        }}
+      >
+        <DonutChart color={color} percentage={percentage} />
+      </View>
+    </View>
+  );
+};
+
 const Dashboard = ({ navigation }) => {
+  const BmiCard = ({ bmi }) => {
+    var classification = "";
+    if (bmi < 18.5) {
+      classification = "Underweight";
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+      classification = "Healthy";
+    } else if (bmi >= 25 && bmi < 29.9) {
+      classification = "Overweight";
+    } else if (bmi >= 30) {
+      classification = "Obese";
+    }
+
+    return (
+      <View
+        style={{
+          backgroundColor: "rgba(251, 188, 5,0.2)",
+          borderRadius: ms(10),
+          padding: ms(20),
+          shadowColor: "#252427",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          shadowOffset: { width: 0, height: 0 },
+          shadowOpacity: 0.1,
+          shadowRadius: 10,
+          elevation: 5,
+        }}
+      >
+        <View>
+          <Text
+            style={{
+              // color: "rgb(251,188,5)",
+              color: "#fb7005",
+              fontSize: ms(15),
+              fontWeight: "800",
+            }}
+          >
+            BMI: {bmi}
+          </Text>
+          <Text
+            style={{
+              color: "rgb(251,188,5)",
+              fontSize: ms(20),
+              fontWeight: "bold",
+            }}
+          >
+            {classification}
+          </Text>
+        </View>
+        <Pressable
+          onPress={() => {
+            navigation.navigate("BMI Calculation");
+          }}
+        >
+          <View
+            style={{
+              backgroundColor: "#fb9005",
+              backgroundColor: "rgb(251,188,5)",
+              borderRadius: ms(10),
+              padding: ms(15),
+            }}
+          >
+            <Text style={{ color: "#fb7005", fontWeight: "700" }}>
+              Calculate
+            </Text>
+          </View>
+        </Pressable>
+      </View>
+    );
+  };
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: true,
@@ -75,10 +190,21 @@ const Dashboard = ({ navigation }) => {
         <Text style={styles.text}>Welcome Back, Anas</Text>
       </View>
       <WelcomeCard />
+      <View>
+        <View style={styles.flexContainer}>
+          <InfoCard info="Height" value={`5'8"`} />
+          <InfoCard info="Age" value={"23"} />
+          <InfoCard info="Weight" value={"70 kg"} />
+        </View>
+        <BmiCard bmi={30} />
+      </View>
       <View style={styles.flexContainer}>
-        <InfoCard info="Height" value={`5'8"`} />
-        <InfoCard info="Age" value={"23"} />
-        <InfoCard info="Weight" value={"70 kg"} />
+        <CalorieCard type={"Burnt"} percentage={75} />
+        <CalorieCard type={"Intake"} percentage={60} />
+      </View>
+      <View>
+        <Text style={[styles.text, { fontSize: ms(18) }]}>Weekly Progress</Text>
+        <BarChart />
       </View>
     </ScrollView>
   );

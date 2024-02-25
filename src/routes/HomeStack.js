@@ -2,6 +2,7 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import CommentsScreen from "../screens/Community/Comments/CommentsScreen";
 import Dashboard from "../screens/Home/Dashboard";
+import CalculateBmiScreen from "../screens/CalculateBmi/CalculateBmiScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -13,22 +14,7 @@ function HomeStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Dashboard" component={Dashboard} />
-      {/* <Stack.Screen name="Comments" component={CommentsScreen} /> */}
-      {/* <Stack.Screen
-        name="Playback"
-        component={Playback}
-        options={navOptionHandler}
-      />
-      <Stack.Screen
-        name="Post Details"
-        component={PostDetails}
-        options={navOptionHandler}
-      />
-      <Stack.Screen
-        name="User Profile"
-        component={UserProfile}
-        options={navOptionHandler}
-      /> */}
+      <Stack.Screen name="BMI Calculation" component={CalculateBmiScreen} />
     </Stack.Navigator>
   );
 }
