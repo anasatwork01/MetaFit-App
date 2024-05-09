@@ -28,6 +28,8 @@ import CommunityStack from "./CommunityStack.js";
 import Theme from "../res/Theme.js";
 import HomeStack from "./HomeStack.js";
 import Profile from "../screens/Profile/Profile.js";
+import DietStack from "./DietStack.js";
+import ExcerciseStack from "./ExcerciseStack.js";
 
 const Tab = createBottomTabNavigator();
 
@@ -110,12 +112,12 @@ function TabStack() {
         />
         <Tab.Screen
           name="Exercises"
-          component={HomeStack}
+          component={ExcerciseStack}
           options={{ headerShown: false }}
         />
         <Tab.Screen
           name="Diet"
-          component={HomeStack}
+          component={DietStack}
           options={{ headerShown: false }}
           // options={({ route }) => {
           //   return {

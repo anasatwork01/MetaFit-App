@@ -4,6 +4,7 @@ const Images = {
   success: require("../../assets/images/success.png"),
   userImg: require("../../assets/images/user.png"),
   postImg: require("../../assets/images/post-img.jpg"),
+  dottedHuman: require("../../assets/images/dotted.jpg"),
 };
 
 export default Images;

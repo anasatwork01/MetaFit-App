@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import CommentsScreen from "../screens/Community/Comments/CommentsScreen";
 import Dashboard from "../screens/Home/Dashboard";
 import CalculateBmiScreen from "../screens/CalculateBmi/CalculateBmiScreen";
+import CameraScreen from "../screens/CalculateBmi/CameraComponent";
 
 const Stack = createNativeStackNavigator();
 

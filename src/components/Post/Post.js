@@ -138,7 +138,7 @@ export default function Post({ post_index = 0, item, postCallback }) {
           {item?.media && item?.media?.type === POST_MEDIA_TYPE.IMAGE && (
             <View style={styles.postImg}>
               <AppImg
-                image={item?.media ? { uri: item?.media?.url } : Images.postImg}
+                image={item?.media ? item?.media?.url : Images.postImg}
                 width="100%"
                 height={ms(248)}
                 resizeMode="cover"

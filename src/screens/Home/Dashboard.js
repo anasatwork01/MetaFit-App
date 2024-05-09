@@ -63,22 +63,25 @@ const InfoCard = ({ info, value }) => {
   );
 };
 
-const CalorieCard = ({ type, percentage }) => {
+export const CalorieCard = ({ type, percentage, width = "45%" }) => {
   var colorBg;
   var color;
   if (type === "Burnt") {
     colorBg = "rgba(255, 99, 71,0.2)";
     color = "#ff6347";
-  } else {
+  } else if (type === "Intake") {
     colorBg = "rgba(90, 184, 90,0.2)";
     color = "#5ab85a";
+  } else {
+    color = Theme.light.secondary;
   }
+
   return (
     <View
       style={{
         borderRadius: ms(10),
         backgroundColor: colorBg,
-        width: "45%",
+        width: width,
         padding: ms(10),
         justifyContent: "center",
         alignItems: "center",

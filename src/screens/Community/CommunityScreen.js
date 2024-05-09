@@ -9,28 +9,37 @@ import { ms } from "react-native-size-matters";
 import { ShadowCard } from "../../components/UI/ShadowCard";
 import { POST_CALLBACK_TYPE, POST_MEDIA_TYPE } from "../../constants/constants";
 import AppButton from "../../components/UI/AppButton";
+import g1 from "../../../assets/images/g1.jpg";
+import g2 from "../../../assets/images/g2.jpg";
 
 const PostData = [
   {
+    _id: "0",
+    content: "I am looking for a gym",
+    user_info: {
+      name: "Anas",
+    },
+  },
+  {
     _id: "1",
-    content: "Hello This is my first testing Post",
+    content: "Happy to share I did my pr bicep curl today",
     user_info: {
       name: "Anas",
     },
     media: {
       type: POST_MEDIA_TYPE.IMAGE,
-      url: "https://img.freepik.com/free-photo/forest-landscape_71767-127.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1703721600&semt=ais",
+      url: g1,
     },
   },
   {
     _id: "2",
-    content: "Hello This is my Second testing Post",
+    content: "Dtarting doing Yoga",
     user_info: {
-      name: "Hassan",
+      name: "Maria",
     },
     media: {
       type: POST_MEDIA_TYPE.IMAGE,
-      url: "https://img.freepik.com/free-photo/misurina-sunset_181624-34793.jpg?w=740&t=st=1703806364~exp=1703806964~hmac=15503451b28f19d8d611ad23febf4a15f7e02409f144b4197a5939eec70a10d9",
+      url: g2,
     },
   },
 ];

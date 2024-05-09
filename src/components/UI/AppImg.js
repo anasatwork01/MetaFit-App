@@ -13,7 +13,6 @@ export default AppImg = ({
   fallback = Images.missingImage,
 }) => {
   const [image, setImage] = React.useState(imageProp);
-  console.log(imageProp, "Image Prop");
   return (
     <Image
       style={{

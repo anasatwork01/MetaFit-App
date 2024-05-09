@@ -11,6 +11,7 @@ function Index() {
     <>
       {loading && <SimpleActivityIndicator />}
       {auth.isAuthenticated ? <MainStack /> : <AuthNavigator />}
+      {/* <AuthNavigator /> */}
     </>
   );
 }
